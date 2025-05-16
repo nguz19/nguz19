@@ -115,10 +115,6 @@
 
     </aside>
 
-
-
-
-
     <!--
       - #main-content
     -->
@@ -153,10 +149,6 @@
 
       </nav>
 
-
-
-
-
       <!--
         - #ABOUT
       -->
@@ -174,12 +166,14 @@
 
           <p>
             While my medical background gives me clinical expertise and problem-solving skills, I'm equally passionate about business applications of data science. I'm excited by the potential to transform organizations through data-driven decision making and predictive analytics.
+          </p>
 
           <p>
             My technical toolkit includes Python, R, SQL, and various machine learning techniques, which I've applied to projects ranging from healthcare predictions to customer behavior analysis. As I complete my degree, I'm eager to leverage my distinctive blend of knowledge and data science expertise in roles where I can create business impact through innovative data solutions.
           </p>
         </section>
 
+      </article>
 
       <!--
         - #EXPERIENCE
@@ -268,36 +262,35 @@
 
       </article>
 
-      
-    <!--
-  - #SKILLS
-    -->
-<article class="skills" data-page="skills">
-  <header>
-    <h2 class="h2 article-title">Skills</h2>
-  </header>
-  <section class="skill-content">
-    <div class="content-card" style="color: white;">
-      <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Programming Languages & Tech</h3>
-      <ul class="skills-list">
-        <li><strong style="color: white; font-style: italic;">Languages:</strong> Python, R, SQL</li>
-        <li><strong style="color: white; font-style: italic;">Technologies:</strong> Machine Learning, Scikit-learn, Numpy, Matplotlib, Tableau, PowerBI</li>
-        <li><strong style="color: white; font-style: italic;">Analytics:</strong> Data Analysis, ML Algorithms (linear and logistic regression, decision trees, PCA)</li>
-      </ul>
+      <!--
+        - #SKILLS
+      -->
+      <article class="skills" data-page="skills">
+        <header>
+          <h2 class="h2 article-title">Skills</h2>
+        </header>
+        <section class="skill-content">
+          <div class="content-card" style="color: white;">
+            <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Programming Languages & Tech</h3>
+            <ul class="skills-list">
+              <li><strong style="color: white; font-style: italic;">Languages:</strong> Python, R, SQL</li>
+              <li><strong style="color: white; font-style: italic;">Technologies:</strong> Machine Learning, Scikit-learn, Numpy, Matplotlib, Tableau, PowerBI</li>
+              <li><strong style="color: white; font-style: italic;">Analytics:</strong> Data Analysis, ML Algorithms (linear and logistic regression, decision trees, PCA)</li>
+            </ul>
 
-      <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Data Science Skills</h3>
-      <ul class="skills-list">
-        <li><strong style="color: white; font-style: italic;">Data Processing:</strong> Exploratory Data Analysis, Data Cleaning, Pre-processing, Visualization</li>
-        <li><strong style="color: white; font-style: italic;">Tools:</strong> Excel, Statistical Analysis</li>
-      </ul>
-      
-      <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Other Skills</h3>
-      <ul class="skills-list">
-        <li>Critical Thinking, Problem-solving, Analytical Skills, Communication</li>
-      </ul>
-    </div>
-  </section>
-</article>
+            <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Data Science Skills</h3>
+            <ul class="skills-list">
+              <li><strong style="color: white; font-style: italic;">Data Processing:</strong> Exploratory Data Analysis, Data Cleaning, Pre-processing, Visualization</li>
+              <li><strong style="color: white; font-style: italic;">Tools:</strong> Excel, Statistical Analysis</li>
+            </ul>
+            
+            <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Other Skills</h3>
+            <ul class="skills-list">
+              <li>Critical Thinking, Problem-solving, Analytical Skills, Communication</li>
+            </ul>
+          </div>
+        </section>
+      </article>
 
       <!--
         - #PROJECTS
@@ -388,37 +381,37 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<script>
-  // Custom script to fix tab navigation
-  document.addEventListener('DOMContentLoaded', function() {
-    // Select all navigation buttons and pages
-    const navLinks = document.querySelectorAll('[data-nav-link]');
-    const pages = document.querySelectorAll('[data-page]');
-    
-    // Add click event to each navigation button
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        // Get the button text (lowercase) - this will match the page identifier
-        const pageName = this.textContent.trim().toLowerCase();
-        
-        // Remove active class from all navigation buttons
-        navLinks.forEach(nav => nav.classList.remove('active'));
-        
-        // Add active class to clicked button
-        this.classList.add('active');
-        
-        // Hide all pages
-        pages.forEach(page => page.classList.remove('active'));
-        
-        // Show the page that corresponds to the clicked button
-        const targetPage = document.querySelector(`[data-page="${pageName}"]`);
-        if (targetPage) {
-          targetPage.classList.add('active');
-        }
+  <script>
+    // Custom script to fix tab navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      // Select all navigation buttons and pages
+      const navLinks = document.querySelectorAll('[data-nav-link]');
+      const pages = document.querySelectorAll('[data-page]');
+      
+      // Add click event to each navigation button
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Get the button text (lowercase) - this will match the page identifier
+          const pageName = this.textContent.trim().toLowerCase();
+          
+          // Remove active class from all navigation buttons
+          navLinks.forEach(nav => nav.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Hide all pages
+          pages.forEach(page => page.classList.remove('active'));
+          
+          // Show the page that corresponds to the clicked button
+          const targetPage = document.querySelector(`[data-page="${pageName}"]`);
+          if (targetPage) {
+            targetPage.classList.add('active');
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
   
 </body>
 
