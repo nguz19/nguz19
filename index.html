@@ -7,130 +7,419 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natalia Guzman - Portfolio</title>
 
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #1a1a2e;
-      color: #eaeaea;
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
 
-    .hero {
-      background-color: #0f3460;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #e94560;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .about, .skills, .projects, .contact {
-      padding: 50px 20px;
-      margin: 20px auto;
-      width: 80%;
-      background-color: #16213e;
-      border-radius: 10px;
-    }
-
-    .about h2, .skills h2, .projects h2, .contact h2 {
-      color: #e94560;
-    }
-
-    .project-item {
-      margin-bottom: 20px;
-      padding: 10px;
-      background-color: #0f3460;
-      border-radius: 5px;
-    }
-
-    .contact form input, .contact form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      background-color: #1a1a2e;
-      color: #eaeaea;
-      border: 1px solid #e94560;
-      border-radius: 5px;
-    }
-
-    .contact form button {
-      background-color: #e94560;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-  </style>
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+  <!--
+    - #MAIN
+  -->
+
   <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Natalia Guzman</h1>
-        <p>Data Scientist | Data Analyst | Machine Learning</p>
-        <p>nataguz19@gmail.com | (773) 410-9825 | Chicago, IL</p>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="assets/images/May 15, Doc 2.jpg" alt="Natalia Guzman" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Natalia Guzman">Natalia Guzman</h1>
+
+          <p class="title">Data Scientist</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
       </div>
-    </section>
 
-    <section class="about">
-      <h2>About Me</h2>
-      <p>I'm Natalia Guzman, a Data Scientist with a unique background as a medical doctor transitioning into the data science field. After completing my medical degree in Colombia, I discovered my passion for data analytics and am now finishing my Master's in Data Science at DePaul University.
-While my medical background gives me clinical expertise and problem-solving skills, I'm equally passionate about business applications of data science. I'm excited by the potential to transform organizations through data-driven decision making and predictive analytics.
-My technical toolkit includes Python, R, SQL, and various machine learning techniques, which I've applied to projects ranging from healthcare predictions to customer behavior analysis.
-As I complete my degree, I'm eager to leverage my knowledge and data science expertise in roles where I can create business impact through innovative data solutions.</p>
-    </section>
+      <div class="sidebar-info_more">
 
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, R, SQL, Tableau, PowerBI</li>
-        <li>Data Analysis & Visualization</li>
-        <li>Machine Learning Algorithms</li>
-        <li>Exploratory Data Analysis, Data Preprocessing & Cleaning</li>
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:nataguz19@gmail.com" class="contact-link">nataguz19@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+17734109825" class="contact-link">+1 (773) 410-9825</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Chicago, IL</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Experience</button>
+          </li>
+          
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Skills</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm Natalia Guzman, a Data Scientist with a unique background as a medical doctor transitioning into the data science field. After completing my medical degree in Colombia, I discovered my passion for data analytics and am now finishing my Master's in Data Science at DePaul University.
+          </p>
+
+          <p>
+            While my medical background gives me clinical expertise and problem-solving skills, I'm equally passionate about business applications of data science. I'm excited by the potential to transform organizations through data-driven decision making and predictive analytics.
+
+          <p>
+            My technical toolkit includes Python, R, SQL, and various machine learning techniques, which I've applied to projects ranging from healthcare predictions to customer behavior analysis. As I complete my degree, I'm eager to leverage my distinctive blend of knowledge and data science expertise in roles where I can create business impact through innovative data solutions.
+          </p>
+        </section>
+
+
+      <!--
+        - #EXPERIENCE
+      -->
+
+      <article class="resume" data-page="experience">
+
+        <header>
+          <h2 class="h2 article-title">Experience</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">DePaul University, College of Computing and Digital Media (CDM)</h4>
+
+              <span>Master of Science — Data Science</span>
+              
+              <span>March 2023 — Present</span>
+
+              <p class="timeline-text">
+                Cumulative GPA: 3.96/4.00, UPE DePaul Chapter - Member<br>
+                Related coursework: Advanced Machine Learning, Databases for Analytics, BI and Analytics Systems, Python Programming, Health Data Science, Data Visualization
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Universidad del Rosario</h4>
+
+              <span>Doctor in Medicine (MD)</span>
+              
+              <span>Graduated January 2022</span>
+
+              <p class="timeline-text">
+                Cumulative GPA: 4.42/5.00
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Medical Intern</h4>
+
+              <span>Hospital Universitario Mayor – Méderi, Bogotá, Colombia</span>
+              
+              <span>January 2021 — December 2021</span>
+
+              <p class="timeline-text">
+                Conducted patient history interviews, physical examinations, and diagnostic evaluations across diverse medical specialties. Assisted in patient care management by collaborating with attending physicians, residents, and other healthcare professionals. Developed strong patient communication skills, educating patients and families on treatment options, preventative care, and health management.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+      
+    <!--
+  - #SKILLS
+    -->
+<article class="skills" data-page="skills">
+  <header>
+    <h2 class="h2 article-title">Skills</h2>
+  </header>
+  <section class="skill-content">
+    <div class="content-card" style="color: white;">
+      <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Programming Languages & Tech</h3>
+      <ul class="skills-list">
+        <li><strong style="color: white; font-style: italic;">Languages:</strong> Python, R, SQL</li>
+        <li><strong style="color: white; font-style: italic;">Technologies:</strong> Machine Learning, Scikit-learn, Numpy, Matplotlib, Tableau, PowerBI</li>
+        <li><strong style="color: white; font-style: italic;">Analytics:</strong> Data Analysis, ML Algorithms (linear and logistic regression, decision trees, PCA)</li>
       </ul>
-    </section>
 
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <img src="./assets/images/dbb25cae-20b2-4d15-81dd-a37af69192b2.png" alt="Insurance Project">
-        <a href="https://github.com/nguz19/Insurance-Cross-Sell-Prediction">Insurance Cross-Sell Prediction</a>
-      </div>
-      <div class="project-item">
-        <img src="./assets/images/bbce0733-9e09-4cf7-b6fc-58f8261819c3.png" alt="Maternal Health">
-        <a href="https://github.com/nguz19/Maternal-Health-Risk">Maternal Health Risk Prediction</a>
-      </div>
-      <div class="project-item">
-        <img src="./assets/images/28071888-5665-43eb-b70b-50875a86291a.png" alt="Obesity Analysis">
-        <a href="https://github.com/nguz19/Obesity-and-Public-Health">Obesity and Public Health Analysis</a>
-      </div>
-    </section>
+      <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Data Science Skills</h3>
+      <ul class="skills-list">
+        <li><strong style="color: white; font-style: italic;">Data Processing:</strong> Exploratory Data Analysis, Data Cleaning, Pre-processing, Visualization</li>
+        <li><strong style="color: white; font-style: italic;">Tools:</strong> Excel, Statistical Analysis</li>
+      </ul>
+      
+      <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Other Skills</h3>
+      <ul class="skills-list">
+        <li>Critical Thinking, Problem-solving, Analytical Skills, Communication</li>
+      </ul>
+    </div>
+  </section>
+</article>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <form action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+      <!--
+        - #PROJECTS
+      -->
+
+      <article class="portfolio" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="project-list">
+
+            <li class="project-item">
+              <a href="https://github.com/nguz19/Obesity-and-Public-Health" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/obesity.jpeg" alt="Obesity and Public Health" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Obesity and Public Health</h3>
+
+                <p class="project-category">Health Data Science</p>
+
+              </a>
+            </li>
+
+            <li class="project-item">
+              <a href="https://github.com/nguzman19/Maternal-Health-Risk" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/maternalpic.png" alt="Maternal Health Risk" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Maternal Health Risk</h3>
+
+                <p class="project-category">Machine Learning Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item">
+              <a href="https://github.com/nguzman19/Insurance-Cross-Sell-Prediction" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/insurancepic.jpg" alt="Insurance Cross-Sell Prediction" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Insurance Cross-Sell Prediction</h3>
+
+                <p class="project-category">Advanced Machine Learning</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+    </div>
+
   </main>
 
+  <!--
+    - custom js link
+  -->
   <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+  // Custom script to fix tab navigation
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all navigation buttons and pages
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    const pages = document.querySelectorAll('[data-page]');
+    
+    // Add click event to each navigation button
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Get the button text (lowercase) - this will match the page identifier
+        const pageName = this.textContent.trim().toLowerCase();
+        
+        // Remove active class from all navigation buttons
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Hide all pages
+        pages.forEach(page => page.classList.remove('active'));
+        
+        // Show the page that corresponds to the clicked button
+        const targetPage = document.querySelector(`[data-page="${pageName}"]`);
+        if (targetPage) {
+          targetPage.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+  
 </body>
 
 </html>
