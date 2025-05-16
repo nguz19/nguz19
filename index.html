@@ -42,7 +42,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="assets/images/May 15, Doc 2.jpg" alt="Natalia Guzman" width="80">
+          <img src="./assets/images/May 15, Doc 2.jpg" alt="Natalia Guzman" width="80">
         </figure>
 
         <div class="info-content">
@@ -275,7 +275,7 @@
             <ul class="skills-list">
               <li><strong style="color: white; font-style: italic;">Languages:</strong> Python, R, SQL</li>
               <li><strong style="color: white; font-style: italic;">Technologies:</strong> Machine Learning, Scikit-learn, Numpy, Matplotlib, Tableau, PowerBI</li>
-              <li><strong style="color: white; font-style: italic;">Analytics:</strong> Data Analysis, ML Algorithms (linear and logistic regression, decision trees, PCA)</li>
+              <li><strong style="color: white; font-style: italic;">Analytics:</strong> Data Analysis, ML Algorithms (regression, ensemble models, PCA)</li>
             </ul>
 
             <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Data Science Skills</h3>
@@ -382,7 +382,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <script>
-    // Custom script to fix tab navigation
+    // Improved script to fix tab navigation
     document.addEventListener('DOMContentLoaded', function() {
       // Select all navigation buttons and pages
       const navLinks = document.querySelectorAll('[data-nav-link]');
@@ -410,6 +410,16 @@
           }
         });
       });
+      
+      // Fix for direct access to sections from URL
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        const section = hash.toLowerCase();
+        const targetNav = document.querySelector(`[data-nav-link]:contains('${section}')`);
+        if (targetNav) {
+          targetNav.click();
+        }
+      }
     });
   </script>
   
