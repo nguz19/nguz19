@@ -17,6 +17,36 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- Debugging specific CSS -->
+  <style>
+    /* Debug styles to ensure projects section is visible */
+    .portfolio.active {
+      display: block !important;
+    }
+    
+    .project-list {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 30px !important;
+    }
+    
+    .project-item {
+      display: block !important;
+      width: 100% !important;
+      max-width: 330px !important;
+      margin-bottom: 30px !important;
+    }
+    
+    /* General section visibility */
+    [data-page] {
+      display: none;
+    }
+    
+    [data-page].active {
+      display: block !important;
+    }
+  </style>
+
   <!--
     - google font link
   -->
@@ -26,6 +56,12 @@
 </head>
 
 <body>
+  <!-- Debug info panel -->
+  <div id="debug-panel" style="position: fixed; top: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 10px; z-index: 9999; max-width: 300px; font-size: 12px;">
+    <h3>Debug Info:</h3>
+    <div id="debug-output">Loading...</div>
+    <button onclick="toggleProjectsSection()" style="margin-top: 10px; padding: 5px;">Force Show Projects</button>
+  </div>
 
   <!--
     - #MAIN
@@ -130,7 +166,7 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
+            <button class="navbar-link" data-nav-link>About</button>
           </li>
 
           <li class="navbar-item">
@@ -142,7 +178,7 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
+            <button class="navbar-link active" data-nav-link>Projects</button>
           </li>
 
         </ul>
@@ -153,7 +189,7 @@
         - #ABOUT
       -->
 
-      <article class="about active" data-page="about">
+      <article class="about" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -275,7 +311,7 @@
             <ul class="skills-list">
               <li><strong style="color: white; font-style: italic;">Languages:</strong> Python, R, SQL</li>
               <li><strong style="color: white; font-style: italic;">Technologies:</strong> Machine Learning, Scikit-learn, Numpy, Matplotlib, Tableau, PowerBI</li>
-              <li><strong style="color: white; font-style: italic;">Analytics:</strong> Data Analysis, ML Algorithms (regression, ensemble models, PCA)</li>
+              <li><strong style="color: white; font-style: italic;">Analytics:</strong> Data Analysis, ML Algorithms (linear and logistic regression, decision trees, PCA)</li>
             </ul>
 
             <h3 class="h3" style="font-size: 1rem; color: #e6ae57; margin-top: 20px; margin-bottom: 10px;">Data Science Skills</h3>
@@ -296,7 +332,7 @@
         - #PROJECTS
       -->
 
-      <article class="portfolio" data-page="projects">
+      <article class="portfolio active" data-page="projects">
 
         <header>
           <h2 class="h2 article-title">Projects</h2>
@@ -381,45 +417,115 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <!-- Debug script -->
   <script>
-    // Improved script to fix tab navigation
+    // Debug functions
+    function updateDebugInfo() {
+      const debugOutput = document.getElementById('debug-output');
+      const projectsSection = document.querySelector('[data-page="projects"]');
+      const projectsList = document.querySelector('.project-list');
+      let projectItems = [];
+      
+      if (projectsList) {
+        projectItems = projectsList.querySelectorAll('.project-item');
+      }
+      
+      let output = `
+        <ul style="list-style: none; padding-left: 0; margin: 0;">
+          <li>Projects section exists: ${projectsSection ? 'Yes' : 'No'}</li>
+          <li>Projects section class: ${projectsSection ? projectsSection.className : 'N/A'}</li>
+          <li>Projects section active: ${projectsSection && projectsSection.classList.contains('active') ? 'Yes' : 'No'}</li>
+          <li>Projects list exists: ${projectsList ? 'Yes' : 'No'}</li>
+          <li>Project items count: ${projectItems.length}</li>
+          <li>Display mode: ${projectsSection ? getComputedStyle(projectsSection).display : 'N/A'}</li>
+        </ul>
+      `;
+      
+      debugOutput.innerHTML = output;
+    }
+    
+    function toggleProjectsSection() {
+      const projectsSection = document.querySelector('[data-page="projects"]');
+      if (projectsSection) {
+        // Remove active class from all sections
+        document.querySelectorAll('[data-page]').forEach(page => {
+          page.classList.remove('active');
+        });
+        
+        // Add active class to projects section
+        projectsSection.classList.add('active');
+        
+        // Force CSS visibility
+        projectsSection.style.display = 'block';
+        
+        // Update active nav link
+        document.querySelectorAll('[data-nav-link]').forEach(link => {
+          link.classList.remove('active');
+          if (link.textContent.trim().toLowerCase() === 'projects') {
+            link.classList.add('active');
+          }
+        });
+        
+        updateDebugInfo();
+      }
+    }
+    
+    // Main navigation script (improved)
     document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, initializing scripts');
+      
+      // Initial debug info
+      updateDebugInfo();
+      
+      // Force Projects to be active initially for testing
+      toggleProjectsSection();
+      
       // Select all navigation buttons and pages
       const navLinks = document.querySelectorAll('[data-nav-link]');
       const pages = document.querySelectorAll('[data-page]');
       
+      console.log(`Found ${navLinks.length} nav links and ${pages.length} pages`);
+      
       // Add click event to each navigation button
       navLinks.forEach(link => {
         link.addEventListener('click', function() {
+          console.log(`Clicked on ${this.textContent.trim()}`);
+          
           // Get the button text (lowercase) - this will match the page identifier
           const pageName = this.textContent.trim().toLowerCase();
+          console.log(`Page name: ${pageName}`);
           
           // Remove active class from all navigation buttons
-          navLinks.forEach(nav => nav.classList.remove('active'));
+          navLinks.forEach(nav => {
+            nav.classList.remove('active');
+            console.log(`Removed active from ${nav.textContent.trim()}`);
+          });
           
           // Add active class to clicked button
           this.classList.add('active');
+          console.log(`Added active to ${this.textContent.trim()}`);
           
           // Hide all pages
-          pages.forEach(page => page.classList.remove('active'));
+          pages.forEach(page => {
+            page.classList.remove('active');
+            page.style.display = 'none';
+            console.log(`Hid page ${page.getAttribute('data-page')}`);
+          });
           
           // Show the page that corresponds to the clicked button
           const targetPage = document.querySelector(`[data-page="${pageName}"]`);
           if (targetPage) {
             targetPage.classList.add('active');
+            targetPage.style.display = 'block';
+            console.log(`Showed page ${pageName}`);
+          } else {
+            console.log(`Could not find page with data-page="${pageName}"`);
           }
+          
+          // Update debug info
+          updateDebugInfo();
         });
       });
-      
-      // Fix for direct access to sections from URL
-      const hash = window.location.hash.substring(1);
-      if (hash) {
-        const section = hash.toLowerCase();
-        const targetNav = document.querySelector(`[data-nav-link]:contains('${section}')`);
-        if (targetNav) {
-          targetNav.click();
-        }
-      }
     });
   </script>
   
